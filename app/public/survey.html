@@ -173,13 +173,12 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="matchModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="matchModalLabel">Best Match</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -198,9 +197,9 @@
         crossorigin="anonymous"></script>
 
     <script>
+
         $("#submitSurvey").click(function (e) {
             e.preventDefault();
-            console.log("click!")
             const answQ1 = $("#inputQuestionOne").val();
             const answQ2 = $("#inputQuestionTwo").val();
             const answQ3 = $("#inputQuestionThree").val();
@@ -234,26 +233,47 @@
             // });
             
             // console.log(inputs[0].value)
-            if (newFriend.name !== "" &&
-                newFriend.photo !== "" &&
-                answQ1 && answQ2 && answQ3 && answQ4 && answQ5 && answQ6 && answQ7 && answQ8 && answQ9 && answQ10
-            ) {
+            if (newFriend.name !== "" && newFriend.photo !== "" && answQ1 && answQ2 && answQ3 && answQ4 && answQ5 && answQ6 && answQ7 && answQ8 && answQ9 && answQ10) {
                 console.log(newFriend)
                 openModal();
-                $.post("/api/friends", newFriend, function (data) {
-                    console.log("Post!")
-                });
-
+                const totalDiferrenceArray = [];
+                $.get("/api/friends",function (data) {
+                    console.log(data)
+                    data.forEach(element => {
+                        const difference =[]
+                        for (let i=0; i < 10 ; i++){
+                            difference.push( Math.abs(element.scores[i] - newFriend.scores[i]) )
+                        }
+                        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+                        const totalDifference = difference.reduce(reducer)
+                        totalDiferrenceArray.push(totalDifference)
+                        console.log(element.name + " Total Difference:"  + totalDifference)
+                    });
+                    console.log(totalDiferrenceArray);
+                    const minDifference = Math.min(...totalDiferrenceArray);
+                    const indexOfFriends = totalDiferrenceArray.indexOf(minDifference);
+                    console.log(minDifference);
+                    const match = data[indexOfFriends]
+                    console.log("Match:" + match.name);
+                    
+                    $(".modal-body").append(`
+                        <h4>${match.name}</h4>
+                        <img src="${match.photo}" alt="Photo ${match.name}">
+                    `)
+                })
+                // $.post("/api/friends", newFriend, function (data) {
+                //     console.log("Post!")
+                // });
             } else {
                 alert("Please fill out all fields before submitting!")
             }
-
 
         })
 
         $(".close").click(function (e) {
             closeModal();
             emptyValues();
+            $(".modal-body").empty();
         });
 
 
@@ -291,9 +311,6 @@
             $("#inputQuestionTen").val("");
         }
 
-        function compareScores(scores){
-
-        }
 
 
     </script>

@@ -1,7 +1,7 @@
 const friends = [
     {
-        "name":"Ahmed",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "name":"Tom",
+        "photo":"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
         "scores":[
             5,
             1,
@@ -13,6 +13,54 @@ const friends = [
             5,
             4,
             1
+          ]
+      },
+      {
+        "name":"Anna",
+        "photo":"https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "scores":[
+            3,
+            4,
+            5,
+            3,
+            2,
+            1,
+            1,
+            2,
+            4,
+            1
+          ]
+      },
+      {
+        "name":"Christina",
+        "photo":"https://images.pexels.com/photos/819836/pexels-photo-819836.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "scores":[
+            4,
+            5,
+            2,
+            2,
+            3,
+            1,
+            5,
+            4,
+            2,
+            2
+          ]
+      },
+      {
+        "name":"Scott",
+        "photo":"https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "scores":[
+            3,
+            3,
+            4,
+            1,
+            5,
+            2,
+            3,
+            2,
+            4,
+            4
           ]
       }
 ]
