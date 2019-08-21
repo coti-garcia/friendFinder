@@ -201,35 +201,42 @@
         $("#submitSurvey").click(function (e) {
             e.preventDefault();
             console.log("click!")
+            const answQ1 = $("#inputQuestionOne").val();
+            const answQ2 = $("#inputQuestionTwo").val();
+            const answQ3 = $("#inputQuestionThree").val();
+            const answQ4 = $("#inputQuestionFour").val();
+            const answQ5 = $("#inputQuestionFive").val();
+            const answQ6 = $("#inputQuestionSix").val();
+            const answQ7 = $("#inputQuestionSeven").val();
+            const answQ8 = $("#inputQuestionEight").val();
+            const answQ9 = $("#inputQuestionNine").val();
+            const answQ10 = $("#inputQuestionTen").val();
+            
             const newFriend = {
                 name: $("#nameInput").val().trim(),
                 photo: $("#photoInput").val().trim(),
                 scores: [
-                    $("#inputQuestionOne").val(),
-                    $("#inputQuestionTwo").val(),
-                    $("#inputQuestionThree").val(),
-                    $("#inputQuestionFour").val(),
-                    $("#inputQuestionFive").val(),
-                    $("#inputQuestionSix").val(),
-                    $("#inputQuestionSeven").val(),
-                    $("#inputQuestionEight").val(),
-                    $("#inputQuestionNine").val(),
-                    $("#inputQuestionTen").val()
+                    parseInt(answQ1),
+                    parseInt(answQ2),
+                    parseInt(answQ3),
+                    parseInt(answQ4),
+                    parseInt(answQ5),
+                    parseInt(answQ6),
+                    parseInt(answQ7),
+                    parseInt(answQ8),
+                    parseInt(answQ9),
+                    parseInt(answQ10),
                 ]
             }
-
+            // const inputs = $('select')
+            // inputs.forEach(element => {
+                        
+            // });
+            
+            // console.log(inputs[0].value)
             if (newFriend.name !== "" &&
                 newFriend.photo !== "" &&
-                newFriend.scores[0] !== null &&
-                newFriend.scores[1] !== null &&
-                newFriend.scores[2] !== null &&
-                newFriend.scores[3] !== null &&
-                newFriend.scores[4] !== null &&
-                newFriend.scores[5] !== null &&
-                newFriend.scores[6] !== null &&
-                newFriend.scores[7] !== null &&
-                newFriend.scores[8] !== null &&
-                newFriend.scores[9] !== null 
+                answQ1 && answQ2 && answQ3 && answQ4 && answQ5 && answQ6 && answQ7 && answQ8 && answQ9 && answQ10
             ) {
                 console.log(newFriend)
                 openModal();
@@ -241,7 +248,14 @@
                 alert("Please fill out all fields before submitting!")
             }
 
+
         })
+
+        $(".close").click(function (e) {
+            closeModal();
+            emptyValues();
+        });
+
 
         function openModal() {
             $("#matchModal").css("display", "block");
@@ -261,22 +275,26 @@
             $(".modal-backdrop").removeClass("modal-backdrop fade show");
         }
 
-        $(".close").click(function (e) {
-            closeModal();
-                $("#nameInput").val("");
-                $("#photoInput").val("")
-                $("#inputQuestionOne").val("");
-                $("#inputQuestionTwo").val("");
-                $("#inputQuestionThree").val("");
-                $("#inputQuestionFour").val("");
-                $("#inputQuestionFive").val("");
-                $("#inputQuestionSix").val("");
-                $("#inputQuestionSeven").val("");
-                $("#inputQuestionEight").val("");
-                $("#inputQuestionNine").val("");
-                $("#inputQuestionNine").val("");
-                $("#inputQuestionTen").val("");
-        });
+        function emptyValues(){
+            $("#nameInput").val("");
+            $("#photoInput").val("")
+            $("#inputQuestionOne").val("");
+            $("#inputQuestionTwo").val("");
+            $("#inputQuestionThree").val("");
+            $("#inputQuestionFour").val("");
+            $("#inputQuestionFive").val("");
+            $("#inputQuestionSix").val("");
+            $("#inputQuestionSeven").val("");
+            $("#inputQuestionEight").val("");
+            $("#inputQuestionNine").val("");
+            $("#inputQuestionNine").val("");
+            $("#inputQuestionTen").val("");
+        }
+
+        function compareScores(scores){
+
+        }
+
 
     </script>
 </body>
