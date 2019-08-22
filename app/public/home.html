@@ -6,24 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://kit.fontawesome.com/59e63df936.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Passion+One&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="jumbotron">
-                    <h1 class="display-4">Friend Finder</h1>
+                <div class="jumbotron text-center">
+                    <h1>Friend Finder</h1>
+                    <hr/>
                     <p class="lead">Answer a few basic questions.</p>
                     <p>Then find the friend with the greatest compatibility!</p>
-                    <a class="btn btn-primary btn-lg" href="/survey" role="button">Go to survey</a>
+                    <a class="btn btn-primary" href="/survey" role="button"><i class="far fa-edit"></i> Go to survey</a>
                   </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <p><a href="/api/friends">API Friends List</a>|<a href="https://github.com/coti-garcia/friendFinder" target="_blank">GitHub Repo</a></p>
-            </div>
-        </div>
+       
     </div>
+    <footer>
+        <div class="container">
+                <div class="row">
+                        <div class="col-12">
+                            <p><a href="/api/friends" target="_blank">API Friends List</a>|<a href="https://github.com/coti-garcia/friendFinder" target="_blank">GitHub Repo</a></p>
+                        </div>
+                </div>
+        </div>
+    </footer>
+    
 </body>
 </html>
