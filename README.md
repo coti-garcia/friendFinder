@@ -6,7 +6,7 @@ Friend Finder is a Node and Express Aplication that compare the inputs of the us
 
 ### Overview
 
-Review the demo here: [demo of the site]( https://coti-garcia.github.io/friendFinder/)
+Review the demo here: [demo of the site]( https://enigmatic-ravine-59780.herokuapp.com/)
 
 
 ### Contribution
