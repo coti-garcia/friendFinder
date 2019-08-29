@@ -11,4 +11,4 @@ Review the demo here: [demo of the site]( https://enigmatic-ravine-59780.herokua
 
 ### Contribution
 
-All the images are open Source files from [pexels] (https://www.pexels.com/)
+All the images are open Source files from [pexels](https://www.pexels.com/)
